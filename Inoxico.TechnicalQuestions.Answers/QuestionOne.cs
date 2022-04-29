@@ -5,7 +5,18 @@ namespace Inoxico.TechnicalQuestions.Answers
     {
         public static int GetLongestSentance(string s)
         {
-            throw new NotImplementedException();
+            var sentences = s.Split('.');
+            var longestSentence = 0;
+            foreach (var sentence in sentences)
+            {
+                var words = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                if (words.Length > longestSentence)
+                {
+                    longestSentence = words.Length;
+                }
+            }
+            return longestSentence;
         }
     }
 }
