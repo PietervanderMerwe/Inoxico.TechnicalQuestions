@@ -5,7 +5,7 @@ namespace Inoxico.TechnicalQuestions.Answers
     {
         public static int GetLongestSentance(string s)
         {
-            var sentences = s.Split('.');
+            var sentences = s.Split(new char[] { '.','?','!' });
             var longestSentence = 0;
             foreach (var sentence in sentences)
             {
